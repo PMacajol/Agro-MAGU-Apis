@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: Agro-MAGU-Apis
+    env: python
+    pythonVersion: 3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    aptDependencies:
+      - unixodbc-dev
+      - gcc
+      - g++
+      - libffi-dev
